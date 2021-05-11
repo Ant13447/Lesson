@@ -1,9 +1,10 @@
-package tests1;
+package tests1.demoqa;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static utils.RandomUtils.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,12 +16,12 @@ public class TestBoxTests1 {
 
     @Test
     void dataAppearsInOutputBlockTest() {
-        String firstname = "Alex";
-        String lastname = "Rykov";
-        String userEmail = "123@ya.ru";
-        String phone = "9265552355";
+        String firstname = getRandomString(10);
+        String lastname = getRandomString(10);
+        String userEmail = getRandomEmail();
+        String phone = getRandomPhone();
         String gender = "Female";
-        String currentAddress = "currentAddress here";
+        String currentAddress = getRandomMessage(20, 35);
         String month = "March";
         String year = "1982";
         String day = "25";
